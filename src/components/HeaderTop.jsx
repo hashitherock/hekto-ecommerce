@@ -20,7 +20,7 @@ const HeaderTop = () => {
                           <h3>+880 1533412566</h3>
                       </div>
                   </div>
-                  <div className="w-[60%] flex justify-end text-end font-josefin pr-9">
+                  <div className="w-[60%] flex justify-end text-end font-josefin">
                       <ul className='flex gap-x-6'>
                           <li>
                               <select name="" className='bg-primary outline-none'>
