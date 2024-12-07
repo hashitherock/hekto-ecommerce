@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from '../assets/Hekto.png'
-import { IoSearch } from "react-icons/io5";
-import { FaAngleDown } from "react-icons/fa6";
+import { IoSearch } from 'react-icons/io5';
+import { FaAngleDown } from 'react-icons/fa6';
 
 const Navbar = () => {
   return (
@@ -21,8 +21,8 @@ const Navbar = () => {
                   </ul>
               </div>
               <div className='w-2/6 flex justify-end'>
-                  <input type='text' className='border-[2px] border-r-0 border-[#E7E6EF] outline-none h-10 w-[75%]'/>
-                  <button className="bg-pink px-3 text-white text-2xl">
+                  <input type='text' className='border-[2px] border-r-0 border-[#E7E6EF] outline-none h-10 w-[75%] px-4'/>
+                  <button className='bg-pink px-3 text-white text-2xl'>
                   <IoSearch />
                   </button>
               </div>

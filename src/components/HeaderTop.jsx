@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaRegEnvelope, FaRegHeart   } from "react-icons/fa";
-import { FiPhoneCall, FiUser  } from "react-icons/fi";
+import { FiPhoneCall, FiUser, FiShoppingCart  } from "react-icons/fi";
 import { BiCart } from "react-icons/bi";
 
 
@@ -36,7 +36,7 @@ const HeaderTop = () => {
                           </li>
                           <li className='flex gap-x-2 items-center'>Login <FiUser /></li>
                           <li className='flex gap-x-2 items-center'>Wishlist <FaRegHeart /></li>
-                          <li className='text-[20px] items-center'><BiCart /></li>
+                          <li className='text-[20px] items-center'><FiShoppingCart /></li>
                       </ul>
                   </div>
               </div>
