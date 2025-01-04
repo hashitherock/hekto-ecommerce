@@ -5,6 +5,8 @@ import LatestProducts from '../components/LatestProducts'
 import ShopexOffer from '../components/ShopexOffer'
 import UniqueFeatures from '../components/UniqueFeatures'
 import TrendingProducts from '../components/TrendingProducts'
+import DiscountItem from '../components/DiscountItem'
+import TopCategories from '../components/TopCategories'
 
 const Home = () => {
   return (
@@ -15,6 +17,8 @@ const Home = () => {
       <ShopexOffer/>
       <UniqueFeatures/>
       <TrendingProducts/>
+      <DiscountItem/>
+      <TopCategories/>
     </>
   )
 }

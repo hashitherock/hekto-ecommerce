@@ -23,17 +23,17 @@ const LatestProducts = () => {
             <div>
                 <div class='mb-4'>
                     <ul class='flex flex-wrap items-center justify-center font-lato text-lg font-medium' id='default-tab' data-tabs-toggle='#default-tab-content' role='tablist'>
-                        <li class='me-3' role='presentation'>
+                        <li class='me-4' role='presentation'>
                             <button class='inline-block p-4 underline text-pink' id='new-arrival-tab' data-tabs-target='#new-arrival' type='button' role='tab' aria-controls='new-arrival' aria-selected='false'>New Arrival</button>
                         </li>
-                        <li class='me-3' role='presentation'>
-                            <button class='inline-block p-4 hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' id='best-seller-tab' data-tabs-target='#best-seller' type='button' role='tab' aria-controls='best-seller' aria-selected='false'>Best Seller</button>
+                        <li class='me-4' role='presentation'>
+                            <button class='inline-block p-4 hover:underline text-[#151875] hover:text-pink' id='best-seller-tab' data-tabs-target='#best-seller' type='button' role='tab' aria-controls='best-seller' aria-selected='false'>Best Seller</button>
                         </li>
-                        <li class='me-3' role='presentation'>
-                            <button class='inline-block p-4 hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' id='featured-tab' data-tabs-target='#featured' type='button' role='tab' aria-controls='featured' aria-selected='false'>Featured</button>
+                        <li class='me-4' role='presentation'>
+                            <button class='inline-block p-4 hover:underline text-[#151875] hover:text-pink' id='featured-tab' data-tabs-target='#featured' type='button' role='tab' aria-controls='featured' aria-selected='false'>Featured</button>
                         </li>
                         <li role='presentation'>
-                            <button class='inline-block p-4 hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' id='special-offer-tab' data-tabs-target='#special-offer' type='button' role='tab' aria-controls='special-offer' aria-selected='false'>Special Offer</button>
+                            <button class='inline-block p-4 hover:underline text-[#151875] hover:text-pink' id='special-offer-tab' data-tabs-target='#special-offer' type='button' role='tab' aria-controls='special-offer' aria-selected='false'>Special Offer</button>
                         </li>
                     </ul>
                 </div>

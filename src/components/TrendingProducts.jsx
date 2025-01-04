@@ -8,6 +8,7 @@ import TrendingImg6 from '../assets/Trending-Products-6.png'
 import TrendingImg7 from '../assets/Trending-Products-7.png'
 import TrendingImg8 from '../assets/Trending-Products-8.png'
 import TrendingImg9 from '../assets/Trending-Products-9.png'
+import { Link } from 'react-router-dom'
 
 const TrendingProducts = () => {
   return (
@@ -75,8 +76,10 @@ const TrendingProducts = () => {
                             <h3 className='font-josefin font-semibold text-[#151875] text-2xl'>23% off in all products</h3>
                             <div className='pt-3'>
                                 <button class='font-lato font-semibold text-base text-[#FB2E86] underline'>Shop Now</button>
+                                {/* <Link to={}>Shop Now</Link> */}
+                                {/* <Link to='/'>Shop Now</Link> */}
                             </div>
-                            <div className='ml-40'>
+                            <div className='flex justify-end'>
                                 <img src={TrendingImg5} alt='Trending Products' />
                             </div>
                         </div>
@@ -92,9 +95,9 @@ const TrendingProducts = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='w-full flex flex-col gap-5 justify-stretch'>
-                        <div className='flex items-center gap-3'>
-                            <div className='flex justify-center bg-[#F5F6F8] p-2'>
+                    <div className='w-full flex flex-col gap-5'>
+                        <div className='flex items-center gap-5'>
+                            <div className='flex justify-center bg-[#F5F6F8] py-3 px-5'>
                                 <img src={TrendingImg7} alt='Trending Products' className='object-cover' />
                             </div>
                             <div>
@@ -102,8 +105,8 @@ const TrendingProducts = () => {
                                 <h5 className='font-josefin text-xs font-medium text-[#151875] line-through pt-1'>$32.00</h5>
                             </div>
                         </div>
-                        <div className='flex items-center gap-3'>
-                            <div className='flex justify-center bg-[#F5F6F8] p-2'>
+                        <div className='flex items-center gap-5'>
+                            <div className='flex justify-center bg-[#F5F6F8] py-3 px-5'>
                                 <img src={TrendingImg8} alt='Trending Products' className='object-cover' />
                             </div>
                             <div>
@@ -111,8 +114,8 @@ const TrendingProducts = () => {
                                 <h5 className='font-josefin text-xs font-medium text-[#151875] line-through pt-1'>$32.00</h5>
                             </div>
                         </div>
-                        <div className='flex items-center gap-3'>
-                            <div className='flex justify-center bg-[#F5F6F8] p-2'>
+                        <div className='flex items-center gap-5'>
+                            <div className='flex justify-center bg-[#F5F6F8] py-3 px-5'>
                                 <img src={TrendingImg9} alt='Trending Products' className='object-cover' />
                             </div>
                             <div>
