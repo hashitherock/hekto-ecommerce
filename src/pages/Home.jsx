@@ -7,6 +7,9 @@ import UniqueFeatures from '../components/UniqueFeatures'
 import TrendingProducts from '../components/TrendingProducts'
 import DiscountItem from '../components/DiscountItem'
 import TopCategories from '../components/TopCategories'
+import Newslater from '../components/Newslater'
+import BrandLogos from '../components/BrandLogos'
+import LatestBlog from '../components/LatestBlog'
 
 const Home = () => {
   return (
@@ -19,6 +22,9 @@ const Home = () => {
       <TrendingProducts/>
       <DiscountItem/>
       <TopCategories/>
+      <Newslater/>
+      <BrandLogos/>
+      <LatestBlog/>
     </>
   )
 }
