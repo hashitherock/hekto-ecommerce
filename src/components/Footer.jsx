@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <>
-            <footer className='pt-10 bg-[#EEEFFB] '>
+            <footer className='pt-10 mt-20 bg-[#EEEFFB]'>
                 <div className='container mx-auto'>
                     <div className='flex justify-between pb-8'>
                         <div className='w-1/3'>
