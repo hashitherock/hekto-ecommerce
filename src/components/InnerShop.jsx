@@ -12,10 +12,6 @@ import { apiData } from './ContextApi';
 const InnerShop = () => {
 
     let data = useContext(apiData);
-    let [categoryShow, setCategoryShow] = useState(false)
-    let [brandShow, setBrandShow] = useState(false)
-    let [colorShow, setColorShow] = useState(false)
-    let [priceShow, setPriceShow] = useState(false)
     let [category, setCategory] = useState([]);
     let [brand, setBrand] = useState([]);
 
@@ -79,22 +75,23 @@ const InnerShop = () => {
     console.log(currentPageProducts);
 
     return (
+        <>
         <section>
             <div className='container mx-auto'>
-                <div className='flex justify-between items-center pt-28'>
+                <div className='flex items-center justify-between pt-28'>
                     <div>
-                        <h3 className='font-Josefin text-2xl text-[#151875] font-bold pb-2'>Ecommerce Acceories & Fashion item </h3>
-                        <h5 className='font-Lato text-sm text-[#8A8FB9]'>About 9,620 results (0.62 seconds)</h5>
+                        <h3 className='font-josefin text-2xl text-[#151875] font-bold pb-2'>Ecommerce Acceories & Fashion item </h3>
+                        <h5 className='font-lato text-sm text-[#8A8FB9]'>About 9,620 results (0.62 seconds)</h5>
                     </div>
                     <div className='flex items-center gap-2'>
-                        <h4 className='font-Lato text-base text-[#3F509E]'>Per Page:</h4>
+                        <h4 className='font-lato text-base text-[#3F509E]'>Per Page:</h4>
                         <div>
                             <input onChange={handlePerPage} className='w-14 h-8 border-2 outline-none pl-3' type="text" />
                         </div>
                     </div>
                     <div className='flex items-center gap-2'>
-                        <h3 className='font-Lato text-base text-[#3F509E]'>Sort By:</h3>
-                        <select name="" id="" className='text-sm font-Lato text-[#8A8FB9] px-2 border-2 py-2 outline-none'>
+                        <h3 className='font-lato text-base text-[#3F509E]'>Sort By:</h3>
+                        <select name="" id="" className='text-sm font-lato text-[#8A8FB9] px-2 border-2 py-2 outline-none'>
                             <option value="">Best Match</option>
                             <option value="">Most Popular</option>
                             <option value="">Featured</option>
@@ -103,7 +100,7 @@ const InnerShop = () => {
                     <div className='flex items-center gap-2'>
                         <div className='flex items-center gap-2'>
                             <div>
-                                <h3 className='font-Lato text-base text-[#3F509E]'>View:</h3>
+                                <h3 className='font-lato text-base text-[#3F509E]'>View:</h3>
                             </div>
                             <div className='flex items-center gap-2' >
                                 <HiViewGrid className='text-[#151875] text-xl' />
@@ -116,59 +113,50 @@ const InnerShop = () => {
                     </div>
                 </div>
                 <div className='pt-24 flex justify-between'>
-                    <div className='w-[20%]'>
-                        <div className=''>
-                            <h3 onClick={() => setCategoryShow(!categoryShow)} className='flex items-center justify-between font-Josefin font-bold text-xl text-[#151875]'>Shop by Category<BiSolidDownArrow className='text-[#151875] text-base' /></h3>
-                            {categoryShow &&
-                                <ul className='h-52 overflow-y-scroll font-Lato text-[#151875]'>
-                                    {category.map((product) => (
-                                        // eslint-disable-next-line react/jsx-key
-                                        <li className='capitalize cursor-pointer py-3 border-b-2 text-base' onClick={() => handleCategory(product)}>{product}</li>
-                                    ))}
-                                </ul>
-                            }
+                    <div className='w-1/4 mr-4'>
+                    <div className=''>
+                            <h3 className='flex items-center justify-between font-josefin font-bold text-xl text-[#151875]'>Product Brand</h3>
+                            <ul className='h-52 overflow-y-scroll font-lato text-[#151875]'>
+                                {brand.map((product) => (
+                                    <li key={product} className='capitalize cursor-pointer py-3 border-gray-100 border-b-2 text-base' onClick={() => handleBrand(product)}>{product}</li>
+                                ))}
+                            </ul>
                         </div>
                         <div className='pt-10'>
-                            <h3 onClick={() => setBrandShow(!brandShow)} className='flex items-center justify-between font-Josefin font-bold text-xl text-[#151875]'>Shop by Brand<BiSolidDownArrow className='text-[#151875] text-base' /></h3>
-                            {brandShow &&
-                                <ul className='h-52 overflow-y-scroll font-Lato text-[#151875]'>
-                                    {brand.map((product) => (
-                                        <li key={product} className='capitalize cursor-pointer py-3 border-b-2 text-base' onClick={() => handleBrand(product)}>{product}</li>
-                                    ))}
-                                </ul>
-                            }
+                            <h3 className='flex items-center justify-between font-josefin font-bold text-xl text-[#151875]'>Categories</h3>
+                            <ul className='h-52 overflow-y-scroll font-lato text-[#151875]'>
+                                {category.map((product) => (
+                                    <li className='capitalize cursor-pointer py-3 border-gray-100 border-b-2 text-base' onClick={() => handleCategory(product)}>{product}</li>
+                                ))}
+                            </ul>
+                        </div>                        
+                        <div className='pt-10'>
+                            <h3 className='flex items-center justify-between font-josefin font-bold text-xl text-[#151875]'>Filter By Color</h3>
+                            <ul className='h-52 overflow-y-scroll font-lato text-[#151875]'>
+                                <li className='capitalize cursor-pointer py-3 border-gray-100 border-b-2 text-base relative after:absolute after:w-3 after:h-3 after:rounded-full after:bg-black after:top-1/2 after:left-0 after:-translate-y-1/2 pl-6'>Color 1</li>
+                                <li className='capitalize cursor-pointer py-3 border-gray-100 border-b-2 text-base relative after:absolute after:w-3 after:h-3 after:rounded-full after:bg-[#DE9034] after:top-1/2 after:left-0 after:-translate-y-1/2 pl-6'>Color 2</li>
+                                <li className='capitalize cursor-pointer py-3 border-gray-100 border-b-2 text-base relative after:absolute after:w-3 after:h-3 after:rounded-full after:bg-[#EC42A2] after:top-1/2 after:left-0 after:-translate-y-1/2 pl-6'>Color 3</li>
+                                <li className='capitalize cursor-pointer py-3 border-gray-100 border-b-2 text-base relative after:absolute after:w-3 after:h-3 after:rounded-full after:bg-[#8568FF] after:top-1/2 after:left-0 after:-translate-y-1/2 pl-6'>Color 4</li>
+                                <li className='capitalize cursor-pointer py-3 border-gray-100 border-b-2 text-base relative after:absolute after:w-3 after:h-3 after:rounded-full after:bg-[#B90B0C] after:top-1/2 after:left-0 after:-translate-y-1/2 pl-6'>Color 5</li>
+                                <li className='capitalize cursor-pointer py-3 border-gray-100 border-b-2 text-base relative after:absolute after:w-3 after:h-3 after:rounded-full after:bg-[#DDDCD9] after:top-1/2 after:left-0 after:-translate-y-1/2 pl-6'>Color 6</li>
+                                <li className='capitalize cursor-pointer py-3 border-gray-100 border-b-2 text-base relative after:absolute after:w-3 after:h-3 after:rounded-full after:bg-[#87B951] after:top-1/2 after:left-0 after:-translate-y-1/2 pl-6'>Color 7</li>
+                            </ul>
                         </div>
                         <div className='pt-10'>
-                            <h3 onClick={() => setColorShow(!colorShow)} className='flex items-center justify-between font-Josefin font-bold text-xl text-[#151875]'>Shop by Color<BiSolidDownArrow className='text-[#151875] text-base' /></h3>
-                            {colorShow &&
-                                <ul className='h-52 overflow-y-scroll font-Lato text-[#151875]'>
-                                    <li className='capitalize cursor-pointer py-3 border-b-2 text-base relative after:absolute after:w-3 after:h-3 after:rounded-full after:bg-black after:top-1/2 after:left-0 after:-translate-y-1/2 pl-6'>Color 1</li>
-                                    <li className='capitalize cursor-pointer py-3 border-b-2 text-base relative after:absolute after:w-3 after:h-3 after:rounded-full after:bg-[#DE9034] after:top-1/2 after:left-0 after:-translate-y-1/2 pl-6'>Color 2</li>
-                                    <li className='capitalize cursor-pointer py-3 border-b-2 text-base relative after:absolute after:w-3 after:h-3 after:rounded-full after:bg-[#EC42A2] after:top-1/2 after:left-0 after:-translate-y-1/2 pl-6'>Color 3</li>
-                                    <li className='capitalize cursor-pointer py-3 border-b-2 text-base relative after:absolute after:w-3 after:h-3 after:rounded-full after:bg-[#8568FF] after:top-1/2 after:left-0 after:-translate-y-1/2 pl-6'>Color 4</li>
-                                    <li className='capitalize cursor-pointer py-3 border-b-2 text-base relative after:absolute after:w-3 after:h-3 after:rounded-full after:bg-[#B90B0C] after:top-1/2 after:left-0 after:-translate-y-1/2 pl-6'>Color 5</li>
-                                    <li className='capitalize cursor-pointer py-3 border-b-2 text-base relative after:absolute after:w-3 after:h-3 after:rounded-full after:bg-[#DDDCD9] after:top-1/2 after:left-0 after:-translate-y-1/2 pl-6'>Color 6</li>
-                                    <li className='capitalize cursor-pointer py-3 border-b-2 text-base relative after:absolute after:w-3 after:h-3 after:rounded-full after:bg-[#87B951] after:top-1/2 after:left-0 after:-translate-y-1/2 pl-6'>Color 7</li>
-                                </ul>
-                            }
-                        </div>
-                        <div className='pt-10'>
-                            <h3 onClick={() => setPriceShow(!priceShow)} className='flex items-center justify-between font-Josefin font-bold text-xl text-[#151875]'>Shop by Price<BiSolidDownArrow className='text-[#151875] text-base' /></h3>
-                            {priceShow &&
-                                <ul className='h-52 overflow-y-scroll font-Lato text-[#151875]'>
-                                    <li onClick={() => handlePrice(0.00, 100.00)} className='capitalize cursor-pointer py-3 border-b-2 text-base'>$0.00 - $100.00</li>
-                                    <li onClick={() => handlePrice(100.01, 200.00)} className='capitalize cursor-pointer py-3 border-b-2 text-base'>$100.01 - $200.00</li>
-                                    <li onClick={() => handlePrice(200.01, 400.00)} className='capitalize cursor-pointer py-3 border-b-2 text-base'>$200.01 - $400.00</li>
-                                    <li onClick={() => handlePrice(400.01, 600.00)} className='capitalize cursor-pointer py-3 border-b-2 text-base'>$400.01 - $600.00</li>
-                                    <li onClick={() => handlePrice(600.01, 100000.99)} className='capitalize cursor-pointer py-3 border-b-2 text-base'>$600.01 - $100000.99</li>
-                                </ul>
-                            }
+                            <h3 className='flex items-center justify-between font-josefin font-bold text-xl text-[#151875]'>Price Filter</h3>
+                            <ul className='h-52 overflow-y-scroll font-lato text-[#151875]'>
+                                <li onClick={() => handlePrice(0.00, 100.00)} className='capitalize cursor-pointer py-3 border-gray-100 border-b-2 text-base'>$0.00 - $100.00</li>
+                                <li onClick={() => handlePrice(100.01, 200.00)} className='capitalize cursor-pointer py-3 border-gray-100 border-b-2 text-base'>$100.01 - $200.00</li>
+                                <li onClick={() => handlePrice(200.01, 400.00)} className='capitalize cursor-pointer py-3 border-gray-100 border-b-2 text-base'>$200.01 - $400.00</li>
+                                <li onClick={() => handlePrice(400.01, 600.00)} className='capitalize cursor-pointer py-3 border-gray-100 border-b-2 text-base'>$400.01 - $600.00</li>
+                                <li onClick={() => handlePrice(600.01, 100000.99)} className='capitalize cursor-pointer py-3 border-gray-100 border-b-2 text-base'>$600.01 - $100000.99</li>
+                            </ul>
                         </div>
                     </div>
-                    <div className='w-[78%] flex flex-wrap justify-between'>
+                    <div className='w-3/4 flex flex-wrap justify-between'>
                         {categoryProducts.length > 0 ?
-                            categoryProducts.map((product, index) => (
-                                <div key={index} className='w-[32%] group pb-5'>
+                            categoryProducts.map((product, productIndex) => (
+                                <div key={productIndex} className='w-[32%] group pb-5'>
                                     <div className='w-full py-14 flex items-center justify-center relative bg-[#F6F7FB] group-hover:bg-[#EBF4F3] overflow-hidden'>
                                         <img className='h-44 object-cover' src={product.thumbnail} alt="shopimg" />
                                         <div className='cursor-pointer flex flex-col items-center absolute gap-3 -bottom-40 left-5 group-hover:bottom-5 duration-500 ease-in-out'>
@@ -178,23 +166,23 @@ const InnerShop = () => {
                                         </div>
                                     </div>
                                     <div className='text-center pt-5'>
-                                        <h2 className='font-Josefin text-lg font-bold text-[#151875] overflow-hidden text-ellipsis whitespace-nowrap'>{product.title}</h2>
+                                        <h2 className='font-josefin text-lg font-bold text-[#151875] overflow-hidden text-ellipsis whitespace-nowrap'>{product.title}</h2>
                                         <div className='flex gap-2 pt-2 justify-center'>
                                             <div className='w-3 h-3 rounded-full bg-[#DE9034]'></div>
                                             <div className='w-3 h-3 rounded-full bg-[#EC42A2]'></div>
                                             <div className='w-3 h-3 rounded-full bg-[#8568FF]'></div>
                                         </div>
                                         <div className='flex gap-3 pt-4 justify-center'>
-                                            <h5 className='font-Josefin text-sm text-[#151875]'>{product.price}</h5>
-                                            <h5 className='font-Josefin text-sm text-[#FB2E86] line-through'>$26.00 </h5>
+                                            <h5 className='font-josefin text-sm text-[#151875]'>{product.price}</h5>
+                                            <h5 className='font-josefin text-sm text-[#FB2E86] line-through'>$26.00</h5>
                                         </div>
                                     </div>
                                 </div>
                             ))
                             :
                             priceProducts.length > 0 ?
-                                priceProducts.map((product, index) => (
-                                    <div key={index} className='w-[32%] group pb-5'>
+                                priceProducts.map((product, productIndex) => (
+                                    <div key={productIndex} className='w-[32%] group pb-5'>
                                         <div className='w-full py-14 flex items-center justify-center relative bg-[#F6F7FB] group-hover:bg-[#EBF4F3] overflow-hidden'>
                                             <img className='h-44 object-cover' src={product.thumbnail} alt="shopimg" />
                                             <div className='cursor-pointer flex flex-col items-center absolute gap-3 -bottom-40 left-5 group-hover:bottom-5 duration-500 ease-in-out'>
@@ -204,15 +192,15 @@ const InnerShop = () => {
                                             </div>
                                         </div>
                                         <div className='text-center pt-5'>
-                                            <h2 className='font-Josefin text-lg font-bold text-[#151875] overflow-hidden text-ellipsis whitespace-nowrap'>{product.title}</h2>
+                                            <h2 className='font-josefin text-lg font-bold text-[#151875] overflow-hidden text-ellipsis whitespace-nowrap'>{product.title}</h2>
                                             <div className='flex gap-2 pt-2 justify-center'>
                                                 <div className='w-3 h-3 rounded-full bg-[#DE9034]'></div>
                                                 <div className='w-3 h-3 rounded-full bg-[#EC42A2]'></div>
                                                 <div className='w-3 h-3 rounded-full bg-[#8568FF]'></div>
                                             </div>
                                             <div className='flex gap-3 pt-4 justify-center'>
-                                                <h5 className='font-Josefin text-sm text-[#151875]'>{product.price}</h5>
-                                                <h5 className='font-Josefin text-sm text-[#FB2E86] line-through'>$26.00 </h5>
+                                                <h5 className='font-josefin text-sm text-[#151875]'>${product.price}</h5>
+                                                <h5 className='font-josefin text-sm text-[#FB2E86] line-through'>$42.00 </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -229,15 +217,15 @@ const InnerShop = () => {
                                             </div>
                                         </div>
                                         <div className='text-center pt-5'>
-                                            <h2 className='font-Josefin text-lg font-bold text-[#151875] overflow-hidden text-ellipsis whitespace-nowrap'>{product.title}</h2>
+                                            <h2 className='font-josefin text-lg font-bold text-[#151875] overflow-hidden text-ellipsis whitespace-nowrap'>{product.title}</h2>
                                             <div className='flex gap-2 pt-2 justify-center'>
                                                 <div className='w-3 h-3 rounded-full bg-[#DE9034]'></div>
                                                 <div className='w-3 h-3 rounded-full bg-[#EC42A2]'></div>
                                                 <div className='w-3 h-3 rounded-full bg-[#8568FF]'></div>
                                             </div>
                                             <div className='flex gap-3 pt-4 justify-center'>
-                                                <h5 className='font-Josefin text-sm text-[#151875]'>{product.price}</h5>
-                                                <h5 className='font-Josefin text-sm text-[#FB2E86] line-through'>$26.00 </h5>
+                                                <h5 className='font-josefin text-sm text-[#151875]'>${product.price}</h5>
+                                                <h5 className='font-josefin text-sm text-[#FB2E86] line-through'>$42.00 </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -255,6 +243,7 @@ const InnerShop = () => {
             </div>
 
         </section>
+        </>
     )
 }
 
