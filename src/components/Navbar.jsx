@@ -13,19 +13,19 @@ const Navbar = () => {
               </div>
               <div className='w-3/6'>
                   <ul className='flex items-center gap-10'>
-                      <li><Link to='/'>Home</Link></li>
+                      <li><Link to='/' className='block'>Home</Link></li>
                       <li className='group relative'>
                           <Link to='/' className='flex items-center gap-1 text-pink'>Pages <FaAngleDown /></Link>
                           {/* 2nd level menu */}
                           <ul className='origin-top-right invisible absolute left-1/2 -translate-x-1/2 min-w-[150px] bg-white border border-slate-200 p-2 rounded shadow-xl group-hover:visible'>
-                              <li className='p-2 hover:text-pink hover:bg-slate-100'><Link to='/about'>About</Link></li>
-                              <li className='p-2 hover:text-pink hover:bg-slate-100'><Link to='/faq'>FAQ</Link></li>
+                              <li className='p-2 hover:text-pink hover:bg-slate-100'><Link to='/about' className='block'>About</Link></li>
+                              <li className='p-2 hover:text-pink hover:bg-slate-100'><Link to='/faq' className='block'>FAQ</Link></li>
                           </ul>
                       </li>
-                      <li><Link to='/product'>Products</Link></li>
-                      <li><Link to='/blog'>Blog</Link></li>
-                      <li><Link to='/shop'>Shop</Link></li>
-                      <li><Link to='/contact'>Contact</Link></li>
+                      <li><Link to='/product' className='block'>Products</Link></li>
+                      <li><Link to='/blog' className='block'>Blog</Link></li>
+                      <li><Link to='/shop' className='block'>Shop</Link></li>
+                      <li><Link to='/contact' className='block'>Contact</Link></li>
                   </ul>
               </div>
               <div className='w-2/6 flex justify-end'>

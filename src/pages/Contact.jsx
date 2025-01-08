@@ -1,10 +1,11 @@
 import React from 'react'
+import ReuseTitle from '../components/ReuseTitle'
 
 const Contact = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <ReuseTitle title='Contact Us'></ReuseTitle>
+    </>
   )
 }
 

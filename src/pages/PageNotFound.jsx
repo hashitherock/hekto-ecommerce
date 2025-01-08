@@ -1,10 +1,11 @@
 import React from 'react'
+import ReuseTitle from '../components/ReuseTitle'
 
 const PageNotFound = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <ReuseTitle title='404'></ReuseTitle>
+    </>
   )
 }
 

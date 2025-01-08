@@ -1,10 +1,11 @@
 import React from 'react'
+import ReuseTitle from '../components/ReuseTitle'
 
 const ProductDetails = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <ReuseTitle title='Product Details'></ReuseTitle>
+    </>
   )
 }
 

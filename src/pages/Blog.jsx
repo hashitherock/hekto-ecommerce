@@ -1,10 +1,11 @@
 import React from 'react'
+import ReuseTitle from '../components/ReuseTitle'
 
 const Blog = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <ReuseTitle title='Blog'></ReuseTitle>
+    </>
   )
 }
 
