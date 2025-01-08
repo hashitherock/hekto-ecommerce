@@ -2,6 +2,7 @@ import React from 'react'
 import ReuseTitle from '../components/ReuseTitle'
 import aboutImg from '../assets/about.png'
 import { Link } from 'react-router-dom'
+import FeatureBox from '../components/FeatureBox'
 
 const About = () => {
   return (
@@ -37,6 +38,16 @@ const About = () => {
           </div>
         </div>
       </section>
+      <section className='pt-10 pb-10'>
+            <div className='container mx-auto'>
+                <div className='text-center'>
+                    <h2 className='font-josefin text-[42px] font-bold text-black mb-10'>
+                      Our Features
+                    </h2>
+                </div>
+                <FeatureBox/>
+            </div>
+        </section>
     </>
   )
 }
