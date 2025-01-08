@@ -1,9 +1,14 @@
 import React from 'react'
+import ReuseTitle from '../components/ReuseTitle'
+import InnerShop from '../components/InnerShop'
+import BrandLogos from '../components/BrandLogos'
 
 const Shop = () => {
   return (
     <>
-      <h1>Shop</h1>
+      <ReuseTitle title='Shop Grid Default'/>
+      <InnerShop/>
+      <BrandLogos/>
     </>
   )
 }
